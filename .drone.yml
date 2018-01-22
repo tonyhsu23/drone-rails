@@ -1,0 +1,5 @@
+pipeline:
+  backend:
+    image: rails:4.2.5.1
+    commands:
+      - bundle install
