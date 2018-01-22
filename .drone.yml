@@ -3,3 +3,4 @@ pipeline:
     image: rails:4.2.5.1
     commands:
       - bundle install
+      - RAILS_ENV=production rake assets:precompile
