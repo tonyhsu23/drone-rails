@@ -4,12 +4,12 @@ pipeline:
     commands:
       - bundle install
 
-    deploy:
-      image: glaszig/drone-capistrano
-      repo: tonyhsu23/drone-rails
-      tasks: sandbox deploy
-      secrets:
-        - capistrano_private_key
-        - capistrano_public_key
-      when:
-        event: push
+  deploy:
+    image: glaszig/drone-capistrano
+    repo: tonyhsu23/drone-rails
+    tasks: sandbox deploy
+    secrets:
+      - capistrano_private_key
+      - capistrano_public_key
+    when:
+      event: push
