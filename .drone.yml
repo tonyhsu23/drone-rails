@@ -3,4 +3,13 @@ pipeline:
     image: rails:4.2.5.1
     commands:
       - bundle install
-      - RAILS_ENV=production rake assets:precompile
+
+    deploy:
+      image: glaszig/drone-capistrano
+      repo: tonyhsu23/drone-rails
+      tasks: sandbox deploy
+      secrets:
+        - capistrano_private_key
+        - capistrano_public_key
+      when:
+        event: push
